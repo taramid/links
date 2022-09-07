@@ -23,7 +23,9 @@ class LinkFactory extends Factory
         $nano = new Client();
 
         return [
-            //
+            'user_id' => 1,
+            'url' => fake()->url(),
+            'hook' => $nano->generateId(4),
         ];
     }
 }
