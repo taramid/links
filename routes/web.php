@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Link;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/links', fn() => Link::all()->pluck('url')->implode('<br>'));
+
+Route::get('/{link:hook}', fn(Link $link) => redirect($link->url, 301));
