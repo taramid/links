@@ -14,4 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class Link extends Model
 {
     use HasFactory;
+
+//    #[Attr('url')]
+//    https://php.watch/articles/php-attributes
 }
