@@ -25,7 +25,7 @@ class LinkFactory extends Factory
         return [
             'user_id' => 1,
             'url' => fake()->url(),
-            'hook' => $nano->generateId(4),
+            'hook' => $nano->generateId(env('HOOK_LEN')),
         ];
     }
 }
