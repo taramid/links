@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkController;
 use App\Models\Link;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/links', fn() => Link::all()->pluck('url')->implode('<br>'));
+Route::get('/links', [LinkController::class, 'index'])->name('links.index');
 
 Route::get('/{link:hook}', fn(Link $link) => redirect($link->url, 301));
