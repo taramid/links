@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use Illuminate\Http\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class LinkController extends Controller
 {
@@ -12,6 +13,7 @@ class LinkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    #[Route('/links')]
     public function index()
     {
         return view('links.index', [
