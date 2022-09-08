@@ -15,7 +15,7 @@
 
     @else
         <table>
-            @foreach($links as $link)
+            @foreach($links->reverse() as $link)
                 <tr>
                     <td class="mx-1">{{ $link->hook }}</td>
                     <td class="mx-1">{{ $link->url }}</td>
