@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
+use Hidehalo\Nanoid\Client;
 use Illuminate\Http\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -28,18 +29,27 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('links.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $nano = new Client();
+
+        $link = new Link();
+        $link->user_id = 1;
+        $link->url = $request->input('url');
+        $link->hook = $nano->generateId(env('HOOK_LEN'));
+
+        $link->save();
+
+        return redirect()->route('links.index');
     }
 
     /**
