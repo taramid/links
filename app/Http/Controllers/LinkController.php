@@ -60,7 +60,9 @@ class LinkController extends Controller
      */
     public function show(Link $link)
     {
-        //
+        return response()->view('links.show', [
+            'link' => $link
+        ]);
     }
 
     /**

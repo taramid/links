@@ -17,7 +17,11 @@
         <table>
             @foreach($links->reverse() as $link)
                 <tr>
-                    <td class="mx-1">{{ $link->hook }}</td>
+                    <td class="mx-1">
+                        <a href="{{ route('links.show',['link' => $link->id])}}">
+                            {{ $link->hook }}
+                        </a>
+                    </td>
                     <td class="mx-1">
                         <x-url :href="$link->url"/>
                     </td>

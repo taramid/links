@@ -22,6 +22,7 @@ Route::controller(LinkController::class)->group(function () {
     Route::get('/links', 'index')->name('links.index');
     Route::get('/links/create', 'create')->name('links.create');
     Route::post('/links', 'store')->name('links.store');
+    Route::get('/links/{link}', 'show')->name('links.show');
 });
 
 Route::get('/{link:hook}', fn(Link $link) => redirect($link->url, 301));
