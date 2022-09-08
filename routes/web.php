@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/links', [LinkController::class, 'index'])->name('links.index');
+Route::controller(LinkController::class)->group(function () {
+
+    Route::get('/links', 'index')->name('links.index');
+});
 
 Route::get('/{link:hook}', fn(Link $link) => redirect($link->url, 301));
