@@ -6,15 +6,14 @@ use Illuminate\View\Component;
 
 class Index extends Component
 {
-
-    public array $links;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        public array $links = []
+    )
     {
         //
     }

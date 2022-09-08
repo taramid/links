@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Links;
 
+use App\Models\Link;
 use Illuminate\View\Component;
 
 class Show extends Component
@@ -9,9 +10,12 @@ class Show extends Component
     /**
      * Create a new component instance.
      *
+     * @param Link $link
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        public Link $link
+    )
     {
         //
     }
