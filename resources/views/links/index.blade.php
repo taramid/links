@@ -18,7 +18,9 @@
             @foreach($links->reverse() as $link)
                 <tr>
                     <td class="mx-1">{{ $link->hook }}</td>
-                    <td class="mx-1">{{ $link->url }}</td>
+                    <td class="mx-1">
+                        <x-url :href="$link->url"/>
+                    </td>
                 </tr>
             @endforeach
         </table>
