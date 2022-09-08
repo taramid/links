@@ -9,9 +9,12 @@ class Layout extends Component
     /**
      * Create a new component instance.
      *
+     * @param ?string $title
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        public string|null $title = null
+    )
     {
         //
     }

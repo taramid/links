@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ $title }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body class="">
 
-<h1 class="text-2xl my-2">layout component</h1>
+<h1 class="text-2xl my-2">{{ $title }}</h1>
 
 {{ $slot }}
 

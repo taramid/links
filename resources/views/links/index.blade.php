@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Links">
 
     @if(empty($links))
 
