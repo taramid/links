@@ -16,7 +16,7 @@ class LinkController extends Controller
     #[Route('/links')]
     public function index()
     {
-        return view('links.index', [
+        return response()->view('links.index', [
             'links' => Link::all()
         ]);
     }
