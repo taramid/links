@@ -53,6 +53,7 @@ class LinkController extends Controller
         } else {
             if ($this->isHookAlreadyTaken($hook)) {
                 return back();
+                //->withInput();
             }
         }
 
