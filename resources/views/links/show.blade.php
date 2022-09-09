@@ -14,7 +14,7 @@
         <tr>
             <td class="px-2 py-1 border text-right">short</td>
             <td class="px-2 py-1 border">
-                <x-url href="{{ url('/') . '/' . $link->hook }}" />
+                <x-url href="{{ url('/') . '/' . $link->hook }}"/>
             </td>
         </tr>
     </table>
@@ -25,6 +25,6 @@
 
     <br>
     <br>
-    <x-buttons.back href="{{ route('links.index') }}" />
+    <x-buttons.back href="{{ route('links.index') }}"/>
 
 </x-layout>
