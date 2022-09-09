@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
-use Hidehalo\Nanoid\Client;
 use Illuminate\Http\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -36,9 +35,10 @@ class LinkController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \NanoidClient  $nano
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request, \NanoidClient $nano)
     {
         $request->validate([
             'url' => 'required|url',
@@ -47,7 +47,7 @@ class LinkController extends Controller
 
         $hook = $request->input('hook');
         if (empty($hook)) {
-            $nano = new Client();
+            //
             $hook = $nano->generateId(env('HOOK_LEN', 5));
         }
 
