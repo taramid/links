@@ -25,7 +25,6 @@
 
     <br>
     <br>
-    <br>
-    <a href="{{ route('links.index') }}">BACK</a>
+    <x-buttons.back href="{{ route('links.index') }}" />
 
 </x-layout>
