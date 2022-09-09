@@ -17,7 +17,10 @@ class LinkController extends Controller
     public function index()
     {
         return response()->view('links.index', [
-            'links' => Link::select('links.id','links.hook','links.url')->orderBy('id', 'desc')->limit(env('INDEX_CHUNK', 44))->get()
+            'links' => Link::select('links.id','links.hook','links.url')
+                ->orderBy('id', 'desc')
+                ->limit(env('INDEX_CHUNK', 44))
+                ->get()
         ]);
     }
 
