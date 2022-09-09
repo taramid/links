@@ -45,7 +45,7 @@ class LinkController extends Controller
         $link = new Link();
         $link->user_id = 1;
         $link->url = $request->input('url');
-        $link->hook = $nano->generateId(env('HOOK_LEN'));
+        $link->hook = $nano->generateId(env('HOOK_LEN', 5));
 
         $link->save();
 
