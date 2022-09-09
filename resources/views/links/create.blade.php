@@ -4,27 +4,44 @@
 
         @csrf
 
-        <div>
-            <label for="url">URL</label>
-            <input
-                type="text"
-                id="url"
-                name="url"
-                class="border border-green-400 w-80"
-            >
-        </div>
+        <table>
+            <tr>
+                <td for="url">URL</td>
+                <td>
+                    <input
+                        type="text"
+                        id="url"
+                        name="url"
+                        class="border w-80"
+                    >
+            </tr>
 
-        <button
-            type="submit"
-            class="bg-green-400 hover:bg-green-500 mt-4 px-1"
-        >
-            Create
-        </button>
+            <tr>
+                <td for="hook">short (optional)</td>
+                <td>
+                    <input
+                        type="text"
+                        id="hook"
+                        name="hook"
+                        class="border w-80"
+                    >
+            </tr>
 
+            <tr>
+                <td></td>
+                <td class="text-right">
+                    <button
+                        type="submit"
+                        class="bg-green-400 hover:bg-green-500 mt-4 px-1"
+                    >
+                        Create
+                    </button>
+            </tr>
+
+        </table>
     </form>
 
     <br>
-    <br>
-    <x-buttons.back href="{{ route('links.index') }}" />
+    <x-buttons.back href="{{ route('links.index') }}"/>
 
 </x-layout>
