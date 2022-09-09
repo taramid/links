@@ -2,18 +2,18 @@
 
     <table>
         <tr>
-            <td>id</td>
-            <td>{{ $link->id }}</td>
+            <td class="px-2 py-1 border text-right">id</td>
+            <td class="px-2 py-1 border">{{ $link->id }}</td>
         </tr>
         <tr>
-            <td>URL</td>
-            <td>
+            <td class="px-2 py-1 border text-right">URL</td>
+            <td class="px-2 py-1 border">
                 <x-url :href="$link->url"/>
             </td>
         </tr>
         <tr>
-            <td>short</td>
-            <td>{{ $link->hook }}</td>
+            <td class="px-2 py-1 border text-right">short</td>
+            <td class="px-2 py-1 border">{{ $link->hook }}</td>
         </tr>
     </table>
 
