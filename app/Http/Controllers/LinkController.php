@@ -47,8 +47,13 @@ class LinkController extends Controller
 
         $hook = $request->input('hook');
         if (empty($hook)) {
-            //
-            $hook = $nano->generateId(env('HOOK_LEN', 5));
+            do {
+                $hook = $nano->generateId(env('HOOK_LEN', 5));
+            } while ($this->isHookAlreadyTaken($hook));
+        } else {
+            if ($this->isHookAlreadyTaken($hook)) {
+                return back();
+            }
         }
 
         $link = new Link();
