@@ -13,7 +13,9 @@
         </tr>
         <tr>
             <td class="px-2 py-1 border text-right">short</td>
-            <td class="px-2 py-1 border">{{ $link->hook }}</td>
+            <td class="px-2 py-1 border">
+                <x-url href="{{ url('/') . '/' . $link->hook }}" />
+            </td>
         </tr>
     </table>
 
