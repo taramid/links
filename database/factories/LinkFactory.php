@@ -20,12 +20,12 @@ class LinkFactory extends Factory
      */
     public function definition()
     {
-        $nano = new Client();
+        $helper = new \App\Helpers\Hook;
 
         return [
             'user_id' => 1,
             'url' => fake()->url(),
-            'hook' => $nano->generateId(env('HOOK_LEN', 5)),
+            'hook' => $helper->generate(),
         ];
     }
 }

@@ -38,10 +38,10 @@ class LinkController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \NanoidClient  $nano
+     * @param  \App\Helpers\Hook  $helper
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request, \NanoidClient $nano)
+    public function store(Request $request, \App\Helpers\Hook $helper)
     {
         $request->validate([
             'url' => 'required|url',
@@ -51,7 +51,7 @@ class LinkController extends Controller
         $hook = $request->input('hook');
         if (empty($hook)) {
             do {
-                $hook = $nano->generateId(env('HOOK_LEN', 5));
+                $hook = $helper->generate();
             } while ($this->isHookAlreadyTaken($hook));
         } else {
             if ($this->isHookAlreadyTaken($hook)) {
