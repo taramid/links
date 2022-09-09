@@ -62,6 +62,17 @@ class LinkController extends Controller
     }
 
     /**
+     * Check if such a hook already exists
+     *
+     * @param string $hook
+     * @return bool
+     */
+    private function isHookAlreadyTaken(string $hook)
+    {
+        return Link::where('hook', $hook)->exists();
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  \App\Models\Link  $link
