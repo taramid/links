@@ -2,7 +2,7 @@
     @csrf
     <button
         type="submit"
-        class="px-1 bg-red-400 hover:bg-red-500 text-white"
+        class="px-1 bg-red-400 hover:bg-red-500 text-white select-none"
     >
         {{ $title }}
     </button>
