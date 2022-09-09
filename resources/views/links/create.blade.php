@@ -6,24 +6,29 @@
 
         <table>
             <tr>
-                <td for="url">URL</td>
                 <td>
-                    <input
+                    <label for="url">URL</label>
+                </td>
+                <td>
+                    <textarea
                         type="text"
                         id="url"
                         name="url"
-                        class="border w-80"
+                        class="border w-full"
                     >
+                    </textarea>
             </tr>
 
             <tr>
-                <td for="hook">short (optional)</td>
+                <td>
+                    <label for="hook">short (optional)</label>
+                </td>
                 <td>
                     <input
                         type="text"
                         id="hook"
                         name="hook"
-                        class="border w-80"
+                        class="border w-full"
                     >
             </tr>
 
