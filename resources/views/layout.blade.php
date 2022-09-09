@@ -17,7 +17,7 @@
 
     @vite('resources/css/app.css')
 </head>
-<body class="flex flex-col items-center">
+<body class="flex flex-col items-center p-1">
 
 <h1 class="text-2xl my-2">{{ $title }}</h1>
 
