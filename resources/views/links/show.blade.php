@@ -19,6 +19,10 @@
 
     <br>
     <br>
+    <x-buttons.delete action="{{ route('links.destroy', ['link' => $link->id]) }}"/>
+
+    <br>
+    <br>
     <a href="{{ route('links.index') }}">BACK</a>
 
 </x-layout>

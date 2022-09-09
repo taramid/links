@@ -92,10 +92,12 @@ class LinkController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Link  $link
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Link $link)
     {
-        //
+        $link->delete();
+
+        return redirect()->route('links.index');
     }
 }
