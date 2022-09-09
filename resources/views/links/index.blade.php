@@ -15,7 +15,7 @@
 
     @else
         <table>
-            @foreach($links->reverse() as $link)
+            @foreach($links as $link)
                 <tr>
                     <td class="mx-1 border-t">
                         <a href="{{ route('links.show',['link' => $link->id])}}">
